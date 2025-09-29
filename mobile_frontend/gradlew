@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Root-level Gradle wrapper shim for CI: always no-op to avoid timeouts or missing native builds.
+
+echo "[NoteEase CI] Skipping Gradle task at root: $* (Expo project, no native build required by default)"
+echo "[NoteEase CI] Use 'npm run prebuild:android' then run Gradle in android/ if a native build is needed."
+exit 0

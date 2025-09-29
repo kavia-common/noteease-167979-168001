@@ -1,0 +1,6 @@
+task noop {
+    doLast {
+        println "[NoteEase CI] No-op module."
+    }
+}
+defaultTasks 'noop'

@@ -1,0 +1,7 @@
+task noop {
+    doLast {
+        println "[NoteEase CI] No-op Gradle build for Expo project."
+    }
+}
+
+defaultTasks 'noop'

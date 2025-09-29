@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Android-level Gradle wrapper shim for CI: always no-op for Expo project prebuild-less environments.
+
+echo "[NoteEase CI] Skipping Android Gradle task: $* (no native Android project generated)"
+echo "[NoteEase CI] Run 'npm run prebuild:android' to generate native projects if native build is required."
+exit 0

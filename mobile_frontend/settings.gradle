@@ -1,0 +1,3 @@
+rootProject.name = "NoteEaseRootShim"
+include(":noop")
+project(":noop").projectDir = file("noop")

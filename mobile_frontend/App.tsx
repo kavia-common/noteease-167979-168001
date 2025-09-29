@@ -1,21 +1,26 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { Colors } from './src/theme/colors';
+import { RootNavigator } from './src/navigation';
 
+// PUBLIC_INTERFACE
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.appRoot}>
+      <StatusBar style="dark" />
+      <SafeAreaView style={styles.safe} />
+      <RootNavigator />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appRoot: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: Colors.background,
+  },
+  safe: {
+    backgroundColor: Colors.background,
   },
 });

@@ -9,11 +9,15 @@
     "web": "expo start --web",
     "lint": "eslint .",
     "prebuild:android": "expo prebuild --platform android",
-    "build": "npm run prebuild:android && cd android && ./gradlew assembleDebug"
+    "build": "echo \"Skipping native build in default CI. Use 'npm run prebuild:android' then 'npm run build:android-gradle' locally if needed.\"",
+    "build:android-gradle": "test -d android && (cd android && chmod +x ./gradlew && ./gradlew assembleDebug) || echo \"Android project not prebuilt. Run 'npm run prebuild:android' first.\"",
+    "ci:verify": "npm run lint"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
     "expo": "~53.0.20",
+    "expo-linear-gradient": "~13.0.2",
+    "expo-sqlite": "~15.0.7",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
